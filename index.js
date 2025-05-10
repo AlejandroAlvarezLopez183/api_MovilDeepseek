@@ -1,8 +1,11 @@
+import dotenv from "dotenv"
 import OpenAI from "openai"
 
+dotenv.config();
+
 const openai = new OpenAI({
-apiKey: "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",
-baseURL:"https://openrouter.ai/api/v1",
+apiKey: process.env.OPENAI_API_KEY,
+baseURL:process.env.OPENAI_BASE_URL,
 });
 
 async function obtenerRespuesta() {
